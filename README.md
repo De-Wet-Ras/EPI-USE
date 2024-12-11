@@ -6,19 +6,19 @@ It is packaged in a ZIP file for easy distribution and use.
 
 Prerequisites
 1. Java Development Kit (JDK)
-To run this project, you need a Java Development Kit (JDK).
+  To run this project, you need a Java Development Kit (JDK).
 
-Recommended versions:
+  Recommended versions:
 
-JDK 17 (LTS) or JDK 11 (LTS).
-Download JDK
+  JDK 17 (LTS) or JDK 11 (LTS).
+  Download JDK: https://www.oracle.com/java/technologies/downloads/
 
 After installing, make sure java and javac commands are available in your terminal or command prompt.
 
 2. NetBeans IDE (Recommended)
-This project is designed to be opened and executed using NetBeans IDE.
-Download NetBeans
-Other IDEs: IntelliJ IDEA, Eclipse, or command-line builds are also compatible.
+  This project is designed to be opened and executed using NetBeans IDE.
+  Download NetBeans: https://netbeans.apache.org/front/main/download/
+  Other IDEs: IntelliJ IDEA, Eclipse, or command-line builds are also compatible.
 
 3. SQLite Database Driver
   The project includes a pre-configured SQLite JDBC driver, so no separate installation is required.
