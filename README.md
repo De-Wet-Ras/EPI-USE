@@ -1,6 +1,8 @@
 Employee Sorter Project - README
+
 Overview
-This project is a Java application designed to process employee and relationship data, construct a hierarchy, and submit it to a server. It is packaged in a ZIP file for easy distribution and use.
+This project is a Java application designed to process employee and relationship data, construct a hierarchy, and submit it to a server. 
+It is packaged in a ZIP file for easy distribution and use.
 
 Prerequisites
 1. Java Development Kit (JDK)
