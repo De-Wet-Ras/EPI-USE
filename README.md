@@ -17,10 +17,10 @@ After installing, make sure java and javac commands are available in your termin
 
 2. NetBeans IDE (Recommended)
   This project is designed to be opened and executed using NetBeans IDE.
-  Download NetBeans: https://netbeans.apache.org/front/main/download/
+  Download NetBeans: https://netbeans.apache.org/front/main/download/.
   Other IDEs: IntelliJ IDEA, Eclipse, or command-line builds are also compatible.
 
-3. SQLite Database Driver
+4. SQLite Database Driver
   The project includes a pre-configured SQLite JDBC driver, so no separate installation is required.
 
 Instructions to Run the Project
@@ -36,6 +36,7 @@ Instructions to Run the Project
 
 3. Check the Configuration
   Locate the config.properties file in the project directory. Ensure the following fields are correctly filled out:
+  
   employee_url=<API URL for employee data>
   relationship_url=<API URL for relationship data>
   submit_url=<API URL for submitting data>
