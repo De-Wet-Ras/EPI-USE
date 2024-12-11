@@ -1,105 +1,119 @@
-# Employee Sorter Project
+# Employee Sorter
+
+A Java application for sorting and managing employee data using APIs and a SQLite database.
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Prerequisites](#prerequisites)
+- [Setup Instructions](#setup-instructions)
+- [Running the Application](#running-the-application)
+- [Project Structure](#project-structure)
+- [Features](#features)
+- [Notes](#notes)
+
+---
 
 ## Overview
-The Employee Sorter Project is a Java application designed to process employee and relationship data, construct a hierarchy, and submit the processed data to a server. This README explains how to set up, run, and use the application, as well as its file structure for users accessing it from GitHub.
+
+This project fetches employee and relationship data from APIs, processes the data to create a hierarchy, and submits the data back to an API. It uses SQLite for intermediate data storage and requires Java to run.
 
 ---
 
 ## Prerequisites
 
-### 1. **Java Development Kit (JDK)**
-To run this project, you need a Java Development Kit (JDK). Examples of supported versions:
-- **JDK 17 (LTS)**
-- **JDK 11 (LTS)**
+To run this project, ensure you have the following installed:
 
-[Download JDK](https://www.oracle.com/java/technologies/javase-downloads.html)
-
-Ensure the `java` and `javac` commands are available in your terminal or command prompt after installation.
-
-### 2. **NetBeans IDE** (Recommended)
-This project is designed to work seamlessly with NetBeans IDE.
-- [Download NetBeans](https://netbeans.apache.org/download/)
-
-**Alternative IDEs:**
-- IntelliJ IDEA
-- Eclipse
-
-Command-line builds are also supported.
-
-### 3. **SQLite Database Driver**
-The SQLite JDBC driver is already included in the project’s `lib` folder, so no additional setup is needed.
+- **Java Development Kit (JDK)**: Version 8 or later.
+  - Examples: [OpenJDK](https://openjdk.org/) or [Oracle JDK](https://www.oracle.com/java/technologies/javase-downloads.html).
+- **SQLite**: Included as part of the JDBC driver used in the project.
 
 ---
 
-## Instructions to Run the Project
+## Setup Instructions
 
-### 1. **Clone the Repository**
-1. Open a terminal or command prompt.
-2. Clone the repository to your local machine:
-   ```bash
-   git clone https://github.com/your-username/employee-sorter.git
-   ```
-3. Navigate into the project directory:
-   ```bash
-   cd employee-sorter
-   ```
+### Clone the Repository
 
-### 2. **Open the Project in NetBeans**
-1. Launch NetBeans IDE.
-2. Go to `File -> Open Project`.
-3. Navigate to the folder where you cloned the repository.
-4. Select the project folder and click `Open`.
+Clone this repository using the following command:
 
-### 3. **Configure the Application**
-The project requires a `config.properties` file to be properly configured with API endpoints and a candidate token. Verify the following fields in the file:
-```properties
-employee_url=<API URL for employee data>
-relationship_url=<API URL for relationship data>
-submit_url=<API URL for submitting data>
-candidate_token=<Your Candidate Token>
-batch_size=100
+```bash
+git clone https://github.com/De-Wet-Ras/EPI-USE.git
 ```
 
-### 4. **Run the Main Class**
-1. In NetBeans, locate the `EmployeeSorterDeWetRasFinal` class.
-2. Right-click on the file and select `Run File` to start the application.
+### Load the Project
 
-The program will process employee and relationship data and submit it to the specified server. Console logs will display the progress and outcomes of each step.
+1. Extract the ZIP or ensure the cloned repository is in a folder.
+2. Open your preferred IDE (e.g., IntelliJ IDEA, NetBeans, Eclipse).
+3. Import the project as a **Maven** or **Gradle** project, or configure dependencies manually.
+4. Verify that the `config.properties` file is in the root directory with valid API URLs and credentials.
+
+### Configure the Project
+
+Ensure the `config.properties` file has the following structure and contains valid data:
+
+```properties
+employee_url=<API_URL_FOR_EMPLOYEES>
+relationship_url=<API_URL_FOR_RELATIONSHIPS>
+submit_url=<API_URL_FOR_SUBMISSION>
+candidate_token=<YOUR_CANDIDATE_TOKEN>
+batch_size=500
+```
+
+---
+
+## Running the Application
+
+1. Build the project in your IDE or using a terminal:
+   
+   ```bash
+   javac -d bin src/com/employeesorterdewetrasfinal/*.java
+   ```
+
+2. Run the project:
+   
+   ```bash
+   java -cp bin com.employeesorterdewetrasfinal.EmployeeSorterDeWetRasFinal
+   ```
+
+3. Monitor the logs in the terminal for progress and errors.
 
 ---
 
 ## Project Structure
-- **`src/`**: Contains all Java source code files.
-- **`lib/`**: Includes external dependencies, such as the SQLite JDBC driver.
-- **`config.properties`**: A configuration file for specifying API endpoints and authentication details.
-- **`employee_relationships.db`**: The SQLite database file (created automatically during runtime).
-- **`README.md`**: Documentation for understanding and using the project.
+
+```
+EPI-USE/
+├── src/
+│   └── com/employeesorterdewetrasfinal/
+│       ├── EmployeeSorterDeWetRasFinal.java
+├── config.properties
+├── README.md
+└── employee_relationships.db
+```
+
+### Key Files
+
+- **`EmployeeSorterDeWetRasFinal.java`**: Main application logic.
+- **`config.properties`**: Configuration file for API credentials and URLs.
+- **`employee_relationships.db`**: SQLite database file generated during execution.
 
 ---
 
-## Notes for GitHub Users
-1. Ensure your local Java environment meets the requirements specified in the prerequisites section.
-2. Update the `config.properties` file with the correct API endpoints and token before running the project.
-3. Report issues or request enhancements via the [GitHub Issues](https://github.com/your-username/employee-sorter/issues) page.
+## Features
+
+- Fetch employee and relationship data from APIs.
+- Store data in a local SQLite database.
+- Generate a hierarchy of employees and submit to the API.
+- Error handling for missing data and submission failures.
 
 ---
 
-## Contribution Guidelines
-We welcome contributions to this project! To contribute:
-1. Fork the repository.
-2. Create a new branch:
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Make your changes and commit them:
-   ```bash
-   git commit -m "Description of changes"
-   ```
-4. Push your branch to your fork:
-   ```bash
-   git push origin feature-name
-   ```
-5. Submit a pull request to the main repository.
+## Notes
+
+- This project assumes valid API credentials and URLs.
+- The SQLite database is recreated each time the application runs.
+- If any issues occur, check the console logs for detailed error messages.
 
 ---
-
